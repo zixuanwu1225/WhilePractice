@@ -22,4 +22,28 @@ public class Test {
             number = (number-number1)/x;
         }
     }
+    public boolean isPrime(int number){
+        int x = 1;
+        while (number != x){
+            x++;
+            if ((number/x == 1)||(number==2)){
+                return true;
+            }
+            else if ((number%2 == 0)||(number%x == 0)){
+                return false;
+            }
+        }
+        return false;
+    }
+    public int maxDoubles(int number, int threshold)
+    {
+        int count;
+        for (count = 0;number<=threshold;count =count+1){
+            number = number * 2;
+            if (number>threshold) {
+                return count;
+            }
+        }
+        return count;
+    }
 }
