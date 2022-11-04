@@ -21,21 +21,5 @@ public class Factorial {
         System.out.println(p.maxDoubles(2, 63));
         System.out.println(p.maxDoubles(8, 10));
         System.out.println(p.maxDoubles(8, 5));
-        int number=s.nextInt();
-        int max = 0;
-        int min = 0;
-        while (number != -1) {
-            if (number > max) {
-                max = number;
-            }
-            if (number < min) {
-                min = number;
-            }
-            if (number == -1){
-                System.out.println(max);
-                System.out.println(min);
-            }
-        }
-
     }
 }
