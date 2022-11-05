@@ -87,9 +87,18 @@ import java.util.Scanner;
           }
       public int countString(String searchString, String origString)
       {
-          int i =0;
-          while()
-
+          int q = 0;
+          int f = 0;
+          int i =searchString.length();
+          String x = "";
+          while(i<origString.length()){
+              x = origString.substring(f,f+searchString.length());
+              if (x.equals(searchString)){
+                  q=q+1;
+              }
+              f=f+searchString.length();
+              i=i+searchString.length();
           }
+          return q;
       }
   }
