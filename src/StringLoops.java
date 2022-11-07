@@ -1,3 +1,4 @@
+import java.util.Locale;
 import java.util.Scanner;
   public class StringLoops {
       // default constructor; no instance variables
@@ -90,14 +91,17 @@ import java.util.Scanner;
           int q = 0;
           int f = 0;
           int i =searchString.length();
+          origString=origString.toLowerCase();
+          searchString=searchString.toLowerCase();
           String x = "";
-          while(i<origString.length()){
+          while(i<=origString.length()){
+
               x = origString.substring(f,f+searchString.length());
               if (x.equals(searchString)){
                   q=q+1;
               }
-              f=f+searchString.length();
-              i=i+searchString.length();
+              f=f+1;
+              i=i+1;
           }
           return q;
       }
