@@ -4,19 +4,6 @@ import java.util.Scanner;
       // default constructor; no instance variables
       public StringLoops() {
       }
-
-      /* Returns the number of times "character" appears in "searchString"
-
-         This should be case sensitive!
-
-         Examples:
-         - if character = "a" and searchString = "Apples and bananas",
-           this method returns 4 (it finds BOTH "A" and "a")
-         - if character = "A" and searchString = "Apples and bananas",
-           this method returns 1 (it finds BOTH "A" and "a")
-         - if character = "!" and searchString = "Hello! Nice day!",
-           this method returns 2
-        */
       public int countCharacters(String character, String searchString) {
           int x = 0;
           for (int i = 0; i < searchString.length(); i++) {
@@ -27,13 +14,6 @@ import java.util.Scanner;
           }
           return x;
       }
-
-      /* Returns the original string reversed
-
-       Examples:
-       - if origString = "hello!" this method returns "!olleh"
-       - if origString = "Apples and bananas" this method returns "sananab dna selppA"
-      */
       public String reverseString(String origString) {
           String x = "";
           for (int i = origString.length(); x.length() < origString.length(); i--) {
@@ -42,15 +22,6 @@ import java.util.Scanner;
           }
           return x;
       }
-
-// --- FIVE NEW METHODS TO ADD & IMPLEMENT ARE BELOW ---
-
-      /* Returns the original string reversed -- SECOND IMPLEMENTATION
-
-       Examples:
-       - if origString = "hello!" this method returns "!olleh"
-       - if origString = "Apples and bananas" this method returns "sananab dna selppA"
-      */
       public String reverseString2(String origString) {
           String x = "";
           for (int i = 0;x.length()<origString.length();i++){
@@ -59,21 +30,6 @@ import java.util.Scanner;
           }
         return x;
       }
-      /* Returns the number of vowels ("a", "e", "i", "o", "u") that appear in "origString";
-    matches should NOT be case sensitive.
-
-    (Note: you could do this by simply calling your countCharacters method 5 times in a
-    row, one for each vowel, but that would lead to traversing the entire origString 5
-    times -- it’s more efficient to only traverse the string once, so don’t use your
-    countCharacters method for this!)
-
-     Examples:
-     - if origString = "Apples and bananas", this method returns 6: Apples and bananas
-     - if origString = "Hello Joe", this method returns 4: Hello Joe
-     - if origString = "Hmm.. pssh!", this method returns 0
-     - if origString = "I", this method returns 1
-     - if origString = "Supercalifragilisticexpialidocious", this method returns 16
-    */
       public int countVowels(String origString)
       {
           String x = "";
@@ -105,4 +61,53 @@ import java.util.Scanner;
           }
           return q;
       }
+      public String removeString(String searchString, String origString)
+      {
+          String d="";
+          String e="";
+
+          int f = 0;
+          int i =searchString.length();
+          String x = "";
+          while(i<=origString.length()){
+
+              x = origString.substring(f,f+searchString.length());
+              if (x.equals(searchString)){
+                  d=origString.substring(0,f);
+                  e=origString.substring(f+searchString.length());
+                  origString=d+e;
+                  f=0;
+                  i=searchString.length();
+              }
+              if(!x.equals(searchString)) {
+                  f = f + 1;
+                  i = i + 1;
+              }
+          }
+          return origString;
+      }
+      public String replaceCharacter(String searchChar, String origStr, String replaceChar)
+      {
+          String d="";
+          String e="";
+          String x = "";
+          int f=0;
+          int i= searchChar.length();
+          while(i<=origStr.length()) {
+              x = origStr.substring(f,f+searchChar.length());
+              if (x.equals(searchChar)){
+                  d=origStr.substring(0,f);
+                  e=origStr.substring(f+searchChar.length());
+                  origStr=d+replaceChar+e;
+                  f=0;
+                  i=searchChar.length();
+              }
+              if(!x.equals(searchChar)) {
+                  f = f + 1;
+                  i = i + 1;
+              }
+          }
+          return origStr;
+      }
+
   }
